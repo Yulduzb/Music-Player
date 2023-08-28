@@ -48,15 +48,19 @@
             <button type="button" id="pause"><i class="fa-solid fa-pause"></i></button>
             <button type="button" id="forward"><i class="fa-solid fa-forward-step"></i></button>
 
-
         </div>
 
+        <div class="valume-container">
+            <i class="fa-solid fa-volume-low"></i>
+            <input type="range" min="1" max="100" value="20" class="volume" onchange="setVolume()">
+            <i class="fa-solid fa-volume-high"></i>
+        </div>
 
-       
+        <audio id="audio" src="assets/Modern Talking Cheri Cheri Lady.mp3" preload="metadata"></audio>
 
     </div>
     <div class="musicplayer-setting">
-        <audio id="audio" src="assets/Modern Talking Cheri Cheri Lady.mp3" preload="metadata"></audio>
+
         <div class="progress-bar">
             <div class="current-bar"></div>
         </div>
@@ -66,7 +70,7 @@
         </div>
         <button id="playlist"><i class="fa-solid fa-angle-down"></i></button>
 
-        <div class="playlist-container ">
+        <div class="playlist-container hide ">
             <button id="close-button">
                 <i class="fa-solid fa-xmark"></i>
             </button>

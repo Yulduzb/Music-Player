@@ -170,16 +170,17 @@ body {
 
 /*Animation*/
 .animation {
-    background-color: var(--body);
-    border-radius: 50%;
-    width: 3.0rem;
-    height: 3.0rem;
+   
+    background-color: var(--cassete);
+    width: 3rem;
+    height: 3rem;
     animation: rotate 2s linear infinite;
 }
 
-.animation .hide {
-    animation: none;
-}
+.animation.paused {
+    animation-play-state: paused; /* Animasyon duraklansın */
+  }
+
 
 
 @keyframes rotate {
@@ -198,7 +199,7 @@ body {
     width: 2.8rem;
     height: 2.8rem;
     position: relative;
-    animation: rotate 3s linear infinite reverse;
+    animation: rotate 2s linear infinite reverse;
 
 
 }
@@ -419,7 +420,7 @@ li {
 }
 
 .playlist-song-details {
-    margin:0 1rem;
+    margin: 0 1rem;
 }
 
 .playlist-image-container img {
@@ -433,31 +434,34 @@ li {
 }
 
 
-button.active i {
-    color: #83B799
+
+
+.valume-container {
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
 }
-
-
 
 
 
 /*Responsive*/
 @media screen and (max-width:600px) {
     .playlist-container {
-        
+
         width: 50%;
         height: 50%;
         top: 7%;
         right: 0.8%;
         z-index: 6;
     }
-    ul{
+
+    ul {
         margin-left: -1rem;
     }
 
-    
+
     .playlist-image-container img {
         width: 70px;
-    
+
     }
 }

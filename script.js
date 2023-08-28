@@ -8,6 +8,9 @@ const audio=document.getElementById('audio');
 
 const playlistBtn=document.getElementById('playlist');
 const playListContainer=document.querySelector(".playlist-container");
+const volumeInput=document.querySelector(".volume");
+const animation=document.querySelectorAll(".animation");
+
 
 const currentTime=document.getElementById('current-time');
 const maxDuration=document.getElementById('max-duration');
@@ -20,6 +23,13 @@ const dinamikContentText=document.querySelector('.dinamikText');
 
 let index;
 let loop;
+
+
+
+
+
+
+
 
 const songList=[
     {
@@ -38,8 +48,17 @@ const songList=[
         img:"assets/you.jpg"
     }
 ]
+//ses ayarlari
+const setVolume=()=>{
+    const volumeValue = volumeInput.value;
+    audio.volume = volumeValue / 100;
+    
+}
+
+volumeInput.addEventListener("input", setVolume);
 
 
+//tıklama ayarlari
 let events={
     mouse:{
         click:"click"
@@ -63,6 +82,8 @@ const isTouchDevice=()=>{
         return false
     }
 }
+
+
 //zaman formatlama
 const timeFormatter=(timeInput)=>{
     let minute=Math.floor(timeInput/60)
@@ -72,6 +93,8 @@ const timeFormatter=(timeInput)=>{
     return `${minute}:${second}`
 }
 
+
+//song ayarlama
 const setSong=(arrayIndex)=>{
     console.log(arrayIndex)
     let {name,link}=songList[arrayIndex];
@@ -88,9 +111,13 @@ const setSong=(arrayIndex)=>{
 
 }
 
-
+//play fonksiyonu
 const playAudio = () =>{
     audio.play();
+    animation.forEach(element=>{
+        element.classList.remove("paused");
+    })
+    
 }
 
 //sonraki şarkiya git
@@ -110,12 +137,20 @@ const nextSong=()=>{
        
     }
  playAudio();
+ animation.forEach(element=>{
+    element.classList.remove("paused");
+})
 }
 
 //şarkiyi durdur
 const pouseAudio=()=>{
     audio.pause();
+    animation.forEach(element=>{
+        element.classList.add("paused");
+    })
+   
 }
+
 
 //bir onceki şarkiya dönmek
 
@@ -133,9 +168,9 @@ const backSong=()=>{
 
 //eğer şarki kedisi biterse aşağideki fonksiyon çalişir
 
-/*audio.onended = () =>{
+audio.onended = () =>{
     nextSong();
-}*/
+}
 
 playBtn.addEventListener("click", playAudio);
 forwardBtn.addEventListener("click", nextSong);
@@ -173,7 +208,7 @@ audio.addEventListener('timeupdate',() => {
 window.onload = () =>{
     index=0;
    
-   /* setSong(index);*/
+    setSong(index);
     initPlaylist();
 }
 
