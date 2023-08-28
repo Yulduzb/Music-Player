@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="cassete">
+            <div class="cassete_label">
+                <div class="cassete_detail">
+                    <div class="cassete_side">A</div>
+                    <div class="cassete_info">
+                        <div class="cassete_block">
+                            <div class="cassete_lines dinamikText"></div>
+                            <div class="cassete_spool">
+                                <div class="animation ">
+                                    <div class="cassete_circle"></div>
+                                </div>
+
+                                <div class="cassete_wire"></div>
+
+                                <div class="animation ">
+                                    <div class="cassete_circle"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cassete_mechanics">
+                <div class="cassete_tuning"></div>
+                <div class="cassete_tuning"></div>
+            </div>
+
+        </div>
+
+        <div class="buttons">
+            <button type="button" id="backward"><i class="fa-solid fa-backward-step"></i></button>
+            <button type="button" id="play"><i class="fa-solid fa-play"></i></button>
+            <button type="button" id="pause"><i class="fa-solid fa-pause"></i></button>
+            <button type="button" id="forward"><i class="fa-solid fa-forward-step"></i></button>
+
+
+        </div>
+
+
+       
+
+    </div>
+    <div class="musicplayer-setting">
+        <audio id="audio" src="assets/Modern Talking Cheri Cheri Lady.mp3" preload="metadata"></audio>
+        <div class="progress-bar">
+            <div class="current-bar"></div>
+        </div>
+        <div class="time-container">
+            <div id="current-time"></div>
+            <div id="max-duration"></div>
+        </div>
+        <button id="playlist"><i class="fa-solid fa-angle-down"></i></button>
+
+        <div class="playlist-container ">
+            <button id="close-button">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <ul id="playlist-song">
+
+
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

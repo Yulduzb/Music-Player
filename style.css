@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Pacifico&display=swap');
+
+:root {
+
+    --radius: 0.5rem;
+    --cassete: #231f23;
+    --spool: #fff;
+    --spool-border: #8b8681;
+    --wire: #45230c;
+    --body: #E86F68;
+    --lato: 'Lato,sans-serif';
+    --Pacifico: 'Pacifico', cursive;
+    --pen: #6066c2;
+
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--lato);
+    background: var(--body);
+}
+
+.container {
+    background-color: var(--body);
+    margin: 0 auto;
+    max-width: 60rem;
+    width: 100%;
+    display: block;
+}
+
+.cassete {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%)translateY(-50%);
+    width: 25rem;
+    height: 15rem;
+    top: 50%;
+    z-index: 2;
+    border-radius: var(--radius);
+    background: var(--cassete);
+
+}
+
+.cassete:before,
+.cassete:after {
+    content: '';
+    background: var(--spool-border);
+    color: var(--cassete);
+    border-radius: 100%;
+    width: 0.5rem;
+    height: 0.5rem;
+    position: absolute;
+    left: 0.5rem;
+}
+
+.cassete:before {
+    top: 0.5rem
+}
+
+.cassete:after {
+    bottom: 0.5rem
+}
+
+.cassete_label {
+    background: linear-gradient(#FAEDDA 50%, #83B799 50%);
+    height: 65%;
+    position: relative;
+    width: auto;
+    margin: 1.5rem;
+    left: 0;
+    border-radius: var(--radius);
+
+}
+
+.cassete_label:before,
+.cassete_label:after {
+    content: '';
+    position: absolute;
+    background: var(--spool-border);
+    color: var(--cassete);
+    border-radius: 100%;
+    width: 0.5rem;
+    height: 0.5rem;
+    position: absolute;
+    right: -1rem;
+}
+
+.cassete_label:before {
+    top: -1rem;
+
+}
+
+.cassete_label:after {
+    bottom: -3.2rem;
+}
+
+.cassete_detail {
+    display: flex;
+    align-items: flex-start;
+    margin: 1rem;
+}
+
+.cassete_side {
+    font-size: 2.2rem;
+    margin-top: 0.5rem;
+}
+
+.cassete_info {
+    width: 85%;
+    margin-left: auto;
+}
+
+.cassete_lines {
+    height: 0.1rem;
+    background: #848184;
+    margin-top: 2rem;
+    position: relative;
+
+
+}
+
+.cassete_lines:before,
+.cassete_lines:after {
+    content: '';
+    height: 0.1rem;
+    width: 100%;
+    background: #848184;
+    position: absolute;
+}
+
+.cassete_lines.dinamikText {
+    top: -1rem;
+    font-family: var(--Pacifico);
+    color: var(--pen);
+    font-size: 15px;
+
+}
+
+.cassete_lines:before {
+    top: 1.2rem;
+}
+
+.cassete_lines:after {
+    top: 2rem;
+    right: -0.1rem
+}
+
+.cassete_block {
+    display: flex;
+    flex-direction: column;
+}
+
+.cassete_spool {
+    width: 85%;
+    background: var(--cassete);
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+    border-radius: var(--radius);
+    margin-top: 1.8rem;
+
+}
+
+
+
+/*Animation*/
+.animation {
+    background-color: var(--body);
+    border-radius: 50%;
+    width: 3.0rem;
+    height: 3.0rem;
+    animation: rotate 2s linear infinite;
+}
+
+.animation .hide {
+    animation: none;
+}
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.cassete_circle {
+    border-radius: 100%;
+    background: var(--spool-border);
+    width: 2.8rem;
+    height: 2.8rem;
+    position: relative;
+    animation: rotate 3s linear infinite reverse;
+
+
+}
+
+
+.cassete_circle:before {
+    content: '';
+    border-radius: 100%;
+    background: var(--spool);
+    width: 2.2rem;
+    height: 2.2rem;
+    position: absolute;
+    left: 0.3rem;
+    top: 0.3rem;
+
+
+}
+
+.cassete_wire {
+    background: var(--spool);
+    width: 4rem;
+    border-radius: 0.1rem;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.cassete_wire:before,
+.cassete_wire:after {
+    content: '';
+    height: 100%;
+    width: 100%;
+}
+
+.cassete_wire:before {
+    background: var(--wire);
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+    width: 25%;
+}
+
+.cassete_wire:after {
+    background: var(--spool-border);
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 100%;
+    width: 10%;
+}
+
+.cassete_mechanics {
+    width: 60%;
+    border: 0.1rem solid var(--spool-border);
+    height: 3rem;
+    border-bottom: none;
+    margin: 0 auto;
+    position: relative;
+    bottom: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+
+}
+
+.cassete_tuning {
+    border-radius: 100%;
+    width: 1rem;
+    height: 1rem;
+    background: var(--spool);
+    position: relative;
+
+}
+
+.cassete_tuning:before {
+    content: '';
+    width: 0.6rem;
+    height: 0.5rem;
+    background: var(--spool);
+    position: absolute;
+}
+
+.cassete_tuning:before {
+    left: 2rem;
+    border-radius: 0.1rem;
+    bottom: 0;
+}
+
+.cassete_tuning:nth-child(2) {
+    transform: rotate(180deg);
+    bottom: 0;
+
+}
+
+.cassete_tuning:nth-child(2):before {
+    bottom: 0.5rem;
+
+}
+
+.buttons {
+    position: absolute;
+    top: 73%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transform: translateX(-50%)translateY(-50%);
+}
+
+.buttons button {
+    border-radius: var(--radius);
+    padding: 0.2rem 2rem;
+    cursor: pointer;
+}
+
+button i {
+    color: var(--cassete);
+    font-size: 1rem;
+    background: #FAEDDA;
+
+}
+
+.song-details {
+    position: absolute;
+    top: 85%;
+    left: 40%;
+}
+
+.hide {
+    display: none;
+}
+
+.musicplayer-setting {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+}
+
+
+#playlist {
+    align-self: end;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#playlist i {
+    background: none;
+    font-size: 1rem;
+}
+
+
+
+.progress-bar {
+    position: relative;
+    background: #FAEDDA;
+    width: 100%;
+    height: 0.3rem;
+    border-radius: 0.2rem;
+    cursor: pointer;
+}
+
+.current-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    background-color: #83B799;
+    height: 100%;
+    width: 50%;
+    border-radius: 0.2rem;
+
+
+}
+
+.time-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    font-size: 15px;
+    background: transparent;
+}
+
+.playlist-container {
+    position: absolute;
+    background: #FAEDDA;
+    width: 20%;
+    height: 50%;
+    top: 7%;
+    right: 0.5%;
+    border-radius: 15px;
+    box-shadow: 0 0 5px var(--spool-border);
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+}
+
+#close-button {
+    background-color: transparent;
+    border: none;
+    height: 1rem;
+    width: 1rem;
+    cursor: pointer;
+    margin: 2% 2% 0 90%;
+
+
+}
+
+
+li {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    cursor: pointer;
+
+}
+
+.playlist-song-details {
+    margin:0 1rem;
+}
+
+.playlist-image-container img {
+    width: 80px;
+
+}
+
+.playlist-song-details>span {
+    display: block;
+    font-size: 15px;
+}
+
+
+button.active i {
+    color: #83B799
+}
+
+
+
+
+
+/*Responsive*/
+@media screen and (max-width:600px) {
+    .playlist-container {
+        
+        width: 50%;
+        height: 50%;
+        top: 7%;
+        right: 0.8%;
+        z-index: 6;
+    }
+    ul{
+        margin-left: -1rem;
+    }
+
+    
+    .playlist-image-container img {
+        width: 70px;
+    
+    }
+}
