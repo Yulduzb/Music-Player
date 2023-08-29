@@ -440,11 +440,25 @@ li {
     position: absolute;
     bottom: 0;
     right: 1rem;
+    color: var(--cassete);
+    
 }
 
 
 
+
 /*Responsive*/
+@media screen and (max-width:1024px) {
+    .playlist-container {
+        width: 30%;
+        height: 50%;
+        z-index: 6;
+    }
+}
+
+
+
+
 @media screen and (max-width:600px) {
     .playlist-container {
 

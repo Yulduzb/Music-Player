@@ -33,6 +33,11 @@ let loop;
 
 const songList=[
     {
+        name:'Céline Dion - The Power Of Love',
+        link:"assets/Céline Dion - The Power Of Love Official Video.mp3",
+        img:"assets/power.jpg"
+    },
+    {
         name:'Modern Talking - Brother Louie',
         link:"assets/Modern Talking - Brother Louie Video.mp3",
         img:"assets/Atlan.jpg" 
@@ -43,11 +48,19 @@ const songList=[
         img:"assets/ceri.jpg" 
     },
     {
+        name:'Céline Dion - I am Alive ',
+        link:"assets/Céline Dion - Im Alive Official HD Video.mp3" ,
+        img:"assets/I'm Live.jpg" 
+    },
+    {
         name:'Modern Talking - Cheri Cheri Lady',
         link:"assets/Modern Talking Cheri Cheri Lady.mp3",
         img:"assets/you.jpg"
     }
 ]
+
+
+
 //ses ayarlari
 const setVolume=()=>{
     const volumeValue = volumeInput.value;
@@ -96,7 +109,7 @@ const timeFormatter=(timeInput)=>{
 
 //song ayarlama
 const setSong=(arrayIndex)=>{
-    console.log(arrayIndex)
+   
     let {name,link}=songList[arrayIndex];
     audio.src=link;
     dinamikContentText.textContent=name;
@@ -172,7 +185,9 @@ audio.onended = () =>{
     nextSong();
 }
 
-playBtn.addEventListener("click", playAudio);
+playBtn.addEventListener("click",()=>{
+    playAudio();
+} );
 forwardBtn.addEventListener("click", nextSong);
 pauseBtn.addEventListener("click", pouseAudio);
 backwardBtn.addEventListener("click", backSong);
@@ -239,3 +254,9 @@ playlistBtn.addEventListener("click",()=>{
 closeButton.addEventListener("click",()=>{
     playListContainer.classList.add("hide");
 })
+
+
+
+
+
+
