@@ -399,6 +399,20 @@ button i {
 
 }
 
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-track{
+   background-color: #eef2ff;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color:#E86F68;
+    border-radius: 8px;
+ }
+
+ 
 #close-button {
     background-color: transparent;
     border: none;
